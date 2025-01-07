@@ -1,0 +1,328 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: darkblue;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animating Circles */
+        .circle {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            animation: spin 8s linear infinite, move 6s ease-in-out infinite alternate;
+        }
+
+        .circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+        }
+
+        .circle:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            bottom: 5%;
+            right: 15%;
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(30px, 30px);
+            }
+        }
+
+        #imageCircle {
+            width: 300px; /* Match the circle size */
+            height: 300px;
+            border-radius: 50%; /* Circular shape */
+            background-position: center; /* Center the image */
+            background-size: cover; /* Scale image to cover the circle */
+            background-repeat: no-repeat; /* Prevent image tiling */
+            position: absolute;
+            animation: spin 8s linear infinite, move 6s ease-in-out infinite alternate;
+        }
+
+        .login-container {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            padding: 40px 20px;
+            background:limegreen;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            z-index: 10;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .input-box .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: gray;
+            font-size: 16px;
+        }
+
+        .gradient-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: darkblue;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .gradient-button:hover {
+            opacity: 0.9;
+        }
+
+        .error-message {
+            color: #ff416c;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .additional-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .additional-links a {
+            color: #ff416c;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Query for Small Devices */
+        @media (max-width: 600px) {
+            .circle:nth-child(1) {
+                width: 150px;
+                height: 150px;
+            }
+
+            .circle:nth-child(2) {
+                width: 150px;
+                height: 150px;
+            }
+
+            .login-container {
+                padding: 30px 15px;
+            }
+
+            .login-container h2 {
+                font-size: 20px;
+            }
+
+            .input-box input {
+                font-size: 14px;
+            }
+
+            .gradient-button {
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            .error-message {
+                font-size: 12px;
+            }
+
+            .additional-links a {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <!-- Animating Circles -->
+    <div class="circle" id="typingCircle"></div>
+    <div class="circle" id="imageCircle"></div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-box">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword()">👁</span>
+            </div>
+            <button class="gradient-button" type="submit">Log In</button>
+            <div class="error-message" id="errorMessage"></div>
+        </form>
+
+        <!--div class="additional-links">
+            <a href="#" id="forgotPassword">Forgot Password?</a>
+            <a href="signup.html" id="signUp">Sign Up</a>
+        </div-->
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁';
+            }
+        }
+
+        // Typing Animation
+        const typingText = "Empower International Academy  EXCELLENCE | INTEGRITY | ACTION ";
+        const typingCircle = document.getElementById('typingCircle');
+        let typingIndex = 0;
+        function typeLetter() {
+            if (typingIndex < typingText.length) {
+                typingCircle.textContent += typingText[typingIndex];
+                typingIndex++;
+                setTimeout(typeLetter, 150);
+            }
+        }
+        typeLetter();
+
+        // Image Slideshow
+        const images = [
+            'img/md.jpg',
+            'img/ga.jpg',
+            'img/jazzy.jpg'
+        ];
+        const imageCircle = document.getElementById('imageCircle');
+        let imageIndex = 0;
+
+        function changeImage() {
+            // Set the image as a background
+            imageCircle.style.backgroundImage = `url(${images[imageIndex]})`;
+
+            // Move to the next image in the array
+            imageIndex = (imageIndex + 1) % images.length;
+
+            setTimeout(changeImage, 4000); // Change image every 4 seconds
+        }
+
+        // Initialize the slideshow
+        changeImage();
+
+        // Login Validation with provided usernames and passwords
+        const validCredentials = [
+            { username: "Patrick", password: "12345678" },
+            { username: "Caramia", password: "1435" },
+            { username: "Messi", password: "Bastille" },
+            { username: "@Lowkey_dejaso", password: "Lowkey@18" },
+            { username: "engineerowenno", password: "theone8" },
+            { username: "Noella", password: "i2l3ov4e" },
+            { username: "Jazzy", password: "24680002" },
+            { username: "Rebecca", password: "244466666" },
+            { username: "Daniela.Elizabeth", password: "elizabeth11" },
+            { username: "Michelle M", password: "1313" },
+            { username: "Samuel Kayinja Gaggawala", password: "10word" },
+            { username: "Felix.p19", password: "Nai2007@2025" },
+            { username: "p_drexler004", password: "Petersondrexler004" },
+            { username: "Isaac wadison", password: "isaac12345678910" },
+            { username: "Irene661", password: "PROUDDAUGHTEROFIAM" },
+            { username: "Jansen wa mummy", password: "2009" },
+            { username: "Owen Cruz", password: "OwenCruz11$#" },
+            { username: "Chloe Clairen", password: "Chloe Clairen" },
+            { username: "Muwonge Jeremiah", password: "74012300" },
+            { username: "Mugwanya Samuel", password: "S1a2m3u4e5l^" },
+            { username: "Kaweesi Gideon", password: "Gideon88" },
+            { username: "Robinah", password: "rob@2007" },
+            { username: "angella", password: "J1E2T3W4A5K6S" },
+            { username: "jacks", password: "almighty123!!" },
+            { username: "Hezi T", password: "Hezi T CA 003" },
+            { username: "aioai", password: "@1000@178@-code" },
+            { username: "King MartinJohns", password: "123@#$martin" },
+            { username: "Kiram", password: "Kiram kwagala 87" },
+            { username: "Jethro Mukisa", password: "uncletj11" }
+        ];
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
+
+            if (isValid) {
+                alert('Login successful!');
+                window.location.href = "EIA Leadership Structure.html"; // Redirect to the EIA Leadership Structure page
+            } else {
+                errorMessage.textContent = 'Invalid username or password. Please try again. Contcact ssendegeyapatrick93@gmail.com';
+            }
+        });
+    </script>
+</body>
+</html>

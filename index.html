@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empower International Academy</title>
+    <link style="background: white; width: 200px; height: 200px; border-radius: 50%; object-fit: cover;" rel="icon" href="img/log.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="eia.css">
+
+  </head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+              <img style=" width: 200px; height: 200px; border-radius: 50%; object-fit: cover;" src="img/log.png" alt="EIA LOGO">
+
+
+            </div>
+            <nav class="header-menu">
+                <a href="login.html">Login</a>
+                <!--a href="#">Contact</a-->
+            </nav>
+        </header>
+
+        <div class="sliding-images">
+            <img src="img/ego.jpg" alt="">
+            <img src="img/re.jpg" alt="">
+            <img src="img/jazzy.jpg" alt="">
+            <img src="img/ga.jpg" alt="">
+            <img src="img/ICT.jpg" alt="">
+            <!--img src="img/slide6.jpg" alt="Art class"-->
+        </div>
+
+        <div class="content-section">
+            <h1> Empower International Academy <span class="highlight">(EIA)</span></h1>
+            <p> To provide a world class Christ Centered Education That fosters Creativity & instills Wisdom Love & A desire to serve</p>
+            <a href="#" class="discover-more">Discover more</a>
+        </div>
+
+
+<style>
+
+</style>
+
+<div class="slideshow">
+    <div class="slide active">
+        <div class="title">Our Vision</div>
+        <p>Our vision is to equip students for a life of integrity, faith, and impact. We accomplish that by providing a world-class, Christ-centered education that fosters creativity and instills wisdom, love, and a desire to serve.</p>
+    </div>
+    <div class="slide">
+        <div class="title">Our Mission</div>
+        <p>Equipping students for a life of integrity, faith, and impact.</p>
+    </div>
+    <div class="slide">
+        <div class="title">Our Core Values</div>
+        <ul>
+            <li>Excellence</li>
+            <li>Integrity</li>
+            <li>Action</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const slideInterval = 8000; // 8 seconds
+
+    function showNextSlide() {
+        slides[currentSlide].classList.remove('active');
+        slides[currentSlide].classList.add('inactive');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.remove('inactive');
+        slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(showNextSlide, slideInterval);
+</script>
+
+
+        <div class="activity-section">
+            <h1>Explore Our <span class="highlight">Clubs & Activities</span></h1>
+            <p>At EIA, we offer a diverse range of clubs and extracurricular activities designed to nurture students' talents and interests. From arts and drama to technology and sports, there's something for everyone.</p>
+
+            <div class="club-info">
+                <img src="img/ICT.jpg" alt="Art Club">
+                <div class="details">
+                    <p><b>IT Club</b> The ICT Club
+Under the visionary leadership of ...., a passionate computer enthusiast, and the mentorship of their patron, Mr. Benon, the ICT Club stands as a hub of innovation and technological excellence at Empower International Academy. Comprising some of the school’s brightest minds, the club delves into coding, web design, and all things tech. They are the go-to team for any computer-related needs and have even created an impressive internal website for the school. The ICT Club continues to push the boundaries of creativity and technical expertise, shaping the digital future of the academy. </p>
+                   <a href="debate.html">Login</a>
+                </div>
+            </div>
+
+            <div class="club-info">
+                <img src="img/Debate.jpg" alt="">
+                <div class="details">
+                    <p><b>Debate Club</b> The Debate Club
+Guided by the  leadership of Samuel Kayinja and the support of their patron, Mr. Atamba, the Debate Club shines as a platform for intellectual growth and eloquence. Renowned for their active participation in Model United Nations conferences, they proudly represent the school on prestigious stages. Within the club, members engage in rigorous debates that hone their critical thinking, public speaking, and analytical skills. The Debate Club continues to cultivate confident, articulate individuals who are unafraid to voice their ideas and shape conversations. <B>Global class</B> </p>
+                  <a href="debate.html" style="display:inline-block;background:#28a745;color:white;padding:10px 20px;text-align:center;text-decoration:none;font-size:16px;border-radius:5px;cursor:pointer;">Learn More</a>
+
+
+
+                </div>
+            </div>
+
+            <div class="club-info">
+                <img src="img/md.jpg" alt="">
+                <div class="details">
+                    <p><b>Music, Dance & Drama Club</b>  The Music, Dance, and Drama Club
+Under the inspiring leadership of Vincent and the mentorship of the esteemed music teacher, Mr. Paul, this vibrant club thrives as a hub for artistic expression. It unites instrumentalists, dancers, and singers in a harmonious blend of creativity and passion. The club's talented musicians skillfully play a variety of instruments, including guitars, bass guitars, saxophones, flutes, and more. Together, they create captivating performances that celebrate the beauty of EIA music, movement, and storytelling, leaving audiences spellbound.</p>
+                  <a href="debate.html" style="display:inline-block;background:#28a745;color:white;padding:10px 20px;text-align:center;text-decoration:none;font-size:16px;border-radius:5px;cursor:pointer;">Learn More</a>
+                </div>
+            </div>
+
+
+            <div class="club-info">
+                <img src="img/Art.jpg" alt="">
+                <div class="details">
+                    <p><b>Arts & Craft Club</b>The Art Club
+Led by the talented Wycliffe and guided by their patron, the dedicated art teacher, Ms. Dorine, the Art Club is a haven for imagination and creativity. Known for producing exceptional artwork, the club plays a pivotal role in beautifying the school, especially during important occasions. Through their innovative designs and artistic flair, they bring ideas to life, inspiring others to appreciate the transformative power of art. The Art Club is where passion and talent meet to create masterpieces that leave lasting impressions.</p>
+                     <a href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-section">
+            <h1>Our <span class="highlight">Achievements</span></h1>
+            <p>EIA is proud to have been recognized for its excellence in academics, arts, and sports. Our students consistently rank among the top in national and international competitions. We are accredited by prestigious organizations, ensuring the highest quality education.</p>
+        </div>
+
+        <footer class="footer">
+            <!--p>&copy; 2024 Empower International Academy. All Rights Reserved.</p>
+            <p><a href="#">Terms</a> | <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a></p>
+        </footer-->
+    </div>
+</body>
+</html>

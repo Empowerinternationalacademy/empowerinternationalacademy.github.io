@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  background-color: #002366; 
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ffcc00;
+}
+
+header {
+  background-color: darkgreen;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.leadership {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: lightgrey;
+}
+
+.team-member {
+  background-color: beige;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.team-member h2 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.team-member img {
+  clip-path: circle(50% at 50% 50%);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: darkblue;
+  color: white;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .team-member {
+    padding: 15px;
+  }
+
+  footer {
+    padding: 15px;
+  }
+}
