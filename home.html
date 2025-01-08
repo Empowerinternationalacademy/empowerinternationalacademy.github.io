@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Soft light blue background */
+        }
+        header {
+            background-color: #0033A0; /* Decolste Blue */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            color: white; /* Text color in header */
+        }
+        .header-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: white; /* White background for the logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        .logo {
+            width: 60px; /* Slightly smaller than container */
+            height: 60px; /* Slightly smaller than container */
+            border-radius: 50%; /* Keep logo within circle */
+            object-fit: cover;
+        }
+        .hamburger {
+            position: absolute;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: white; /* Hamburger bar color */
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white; /* Sidebar background */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .close-btn {
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #0033A0; /* Close button color */
+        }
+        .sidebar h3 {
+            margin: 0 0 20px;
+            color: #0033A0; /* Sidebar header color */
+            text-align: left;
+        }
+        .sidebar a {
+            display: block;
+            color: #333; /* Link color */
+            text-decoration: none;
+            padding: 10px 0;
+            transition: background 0.3s;
+            text-align: left;
+        }
+        .sidebar a:hover {
+            background-color: #f0f0f0; /* Hover effect */
+        }
+        .slideshow-container {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+        }
+        .mySlides {
+            display: none;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .text {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff; /* Content background */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: left;
+        }
+        .content h3 {
+            font-size: 3rem; /* Larger font size */
+            margin-bottom: 10px;
+            font-weight: bold;
+            line-height: 1.2; /* Line height adjustment */
+            font-family: 'Georgia', serif; /* Different font family */
+            color: #0033A0; /* Heading color */
+            border-left: 4px solid #00A651; /* Green left border */
+            padding-left: 15px; /* Padding for the left border */
+            display: inline-block; /* Inline block for line effect */
+        }
+        .content p {
+            margin: 20px 0; /* Spacing adjustments */
+            line-height: 1.6;
+            color: #555; /* Slightly lighter text color */
+        }
+        .learn-more {
+            background-color: #00A651; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            display: inline-block; /* Center button */
+            margin: 20px auto; /* Centered with margin */
+        }
+        .learn-more:hover {
+            background-color: #00843D; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-title">
+        <div class="logo-container">
+            <img src="img/log.png" alt="Logo" class="logo"> <!-- Replace with your logo URL -->
+        </div>
+       EMPOWER INTERNATIONAL ACADEMY
+    </div>
+    <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <span class="close-btn" id="close-btn">&times;</span>
+    <h3>Menu</h3>
+    <a href="#">EIA</a>
+    <a href="#">EIA NEWS </a>
+    <a href="#">Leadership Structure</a>
+    <a href="#"></a>
+    <a href="#">Admission & Aid</a>
+</div>
+
+<div class="slideshow-container">
+    <div class="mySlides" style="background-image: url('img/drone.jpg');">
+        <div class="text">
+            <h2 style="background-color: greenyellow;">EIA PREMISES</h2>
+            <p style="background-color: greenyellow;">Beatiful classrooms and Blocks Favor edunsive schooling</p>
+        </div>
+    </div>
+    <div class="mySlides" style="background-image: url('img/messi.jpg');">
+        <div class="text">
+            <h2></h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="mySlides" style="background-image: url('img/ga.jpg');">
+        <div class="text">
+            <h2 style="background-color: greenyellow;">SPORTS ARE PART OF US</h2>
+            <p style="background-color: greenyellow;">Games are participarted through boys and girls</p>
+        </div>
+    </div>
+    <div class="mySlides" style="background-image: url('img/re.jpg');">
+        <div class="text">
+            <h2></h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="mySlides" style="background-image: url('img/ICT.jpg');">
+        <div class="text">
+            <h2></h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="mySlides" style="background-image: url('img/mun.jpg');">
+        <div class="text">
+            <h2></h2>
+            <p></p>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <h3>EXELLENCE | INTERGRITY | ACTION</h3>
+    <p>Empower International Academy is a Christian mixed international boarding
+school located in Nswanjere, Mpigi district.</p>
+</div>
+
+<!--a href="#" class="learn-more">LEARN MORE</a--> <!-- Moved outside the content section -->
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('close-btn');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+    });
+
+    // Close sidebar if clicked outside
+    window.addEventListener('click', (event) => {
+        if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }    
+        slides[slideIndex - 1].style.display = "block";  
+        setTimeout(showSlides, 10000); // Change image every 10 seconds
+    }
+</script>
+
+</body>
+</html>
