@@ -16,17 +16,15 @@
             background-color: #0033A0; /* Decolste Blue */
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between; /* Space between logo and hamburger */
             padding: 10px 20px;
             color: white; /* Text color in header */
         }
         .header-title {
-            text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
             display: flex;
             align-items: center;
-            justify-content: center;
         }
         .logo-container {
             width: 70px;
@@ -39,16 +37,12 @@
             margin-right: 10px;
         }
         .logo {
-            width: 60px; /* Slightly smaller than container */
-            height: 60px; /* Slightly smaller than container */
+            width: 100%; /* Responsive logo */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 50%; /* Keep logo within circle */
             object-fit: cover;
         }
         .hamburger {
-            position: absolute;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
             cursor: pointer;
         }
         .bar {
@@ -78,13 +72,11 @@
             font-size: 20px;
             cursor: pointer;
             margin-bottom: 20px;
-            text-align: left;
             color: #0033A0; /* Close button color */
         }
         .sidebar h3 {
             margin: 0 0 20px;
             color: #0033A0; /* Sidebar header color */
-            text-align: left;
         }
         .sidebar a {
             display: block;
@@ -92,7 +84,6 @@
             text-decoration: none;
             padding: 10px 0;
             transition: background 0.3s;
-            text-align: left;
         }
         .sidebar a:hover {
             background-color: #f0f0f0; /* Hover effect */
@@ -127,11 +118,10 @@
             text-align: left;
         }
         .content h3 {
-            font-size: 3rem; /* Larger font size */
+            font-size: 2rem; /* Adjusted font size */
             margin-bottom: 10px;
             font-weight: bold;
             line-height: 1.2; /* Line height adjustment */
-            font-family: 'Georgia', serif; /* Different font family */
             color: #0033A0; /* Heading color */
             border-left: 4px solid #00A651; /* Green left border */
             padding-left: 15px; /* Padding for the left border */
@@ -141,6 +131,31 @@
             margin: 20px 0; /* Spacing adjustments */
             line-height: 1.6;
             color: #555; /* Slightly lighter text color */
+        }
+        .table-container {
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff; /* Table background */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 100%; /* Full width */
+            max-width: 800px; /* Limit max width */
+            overflow: hidden; /* Prevent overflow */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 1s ease; /* Fade-in effect */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #0033A0; /* Header background color */
+            color: white; /* Header text color */
         }
         .learn-more {
             background-color: #00A651; /* Green button */
@@ -155,6 +170,17 @@
         .learn-more:hover {
             background-color: #00843D; /* Darker green on hover */
         }
+        @media (max-width: 600px) {
+            .header-title {
+                font-size: 1.2rem; /* Smaller font size for mobile */
+            }
+            .content h3 {
+                font-size: 1.5rem; /* Smaller heading for mobile */
+            }
+            .table-container {
+                margin: 20px 10px; /* Adjust margins for mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -164,7 +190,7 @@
         <div class="logo-container">
             <img src="img/log.png" alt="Logo" class="logo"> <!-- Replace with your logo URL -->
         </div>
-       EMPOWER INTERNATIONAL ACADEMY
+        EMPOWER INTERNATIONAL ACADEMY
     </div>
     <div class="hamburger" id="hamburger">
         <div class="bar"></div>
@@ -178,7 +204,7 @@
     <h3>Menu</h3>
     <a href="#">EIA NEWS </a>
     <a href="#">Leadership Structure</a>
-    <a href="#"> Chatting forum</a>
+    <a href="#">Chatting Forum</a>
     <a href="#">Admission</a>
 </div>
 
@@ -186,7 +212,7 @@
     <div class="mySlides" style="background-image: url('img/drone.jpg');">
         <div class="text">
             <h2 style="background-color: greenyellow;">EIA PREMISES</h2>
-            <p style="background-color: greenyellow;">Beatiful classrooms and Blocks Favor edunsive schooling</p>
+            <p style="background-color: greenyellow;">Beautiful classrooms and blocks for conducive schooling</p>
         </div>
     </div>
     <div class="mySlides" style="background-image: url('img/messi.JPG');">
@@ -198,7 +224,7 @@
     <div class="mySlides" style="background-image: url('img/ga.jpg');">
         <div class="text">
             <h2 style="background-color: greenyellow;">SPORTS ARE PART OF US</h2>
-            <p style="background-color: greenyellow;">Games are participarted through boys and girls</p>
+            <p style="background-color: greenyellow;">Games are participated through boys and girls</p>
         </div>
     </div>
     <div class="mySlides" style="background-image: url('img/re.jpg');">
@@ -222,12 +248,29 @@
 </div>
 
 <div class="content">
-    <h3>EXELLENCE INTERGRITY ACTION</h3>
-    <p>Empower International Academy is a Christian mixed international boarding
-school located in Nswanjere, Mpigi district.</p>
+    <h3>Empower International Academy is a Christian mixed international boarding school located in Nswanjere, Mpigi district.</h3>
+    <p></p>
 </div>
 
-<!--a href="#" class="learn-more">LEARN MORE</a--> <!-- Moved outside the content section -->
+<!-- New Section for Vision, Core Values, and Mission -->
+<div class="table-container" id="table-section">
+    <table>
+        <thead>
+            <tr>
+                <th>Vision</th>
+                <th>Core Values</th>
+                <th>Mission</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="vision-cell"></td>
+                <td id="values-cell"></td>
+                <td id="mission-cell"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <script>
     const hamburger = document.getElementById('hamburger');
@@ -262,6 +305,31 @@ school located in Nswanjere, Mpigi district.</p>
         slides[slideIndex - 1].style.display = "block";  
         setTimeout(showSlides, 10000); // Change image every 10 seconds
     }
+
+    // Fade in the table
+    const tableSection = document.getElementById('table-section');
+    tableSection.style.opacity = 1;
+
+    // Auto typing effect
+    function typeText(elementId, text, delay) {
+        const element = document.getElementById(elementId);
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, delay);
+            }
+        }
+
+        type();
+    }
+
+    // Start typing effects
+    typeText('vision-cell', 'Our vision is to equip students for a life of integrity, faith, and impact. We accomplish that by providing a world-class, Christ-centered education that fosters creativity and instills wisdom, love, and a desire to serve.', 50);
+    typeText('values-cell', 'Excellence, Integrity, Action', 50);
+    typeText('mission-cell', 'Equipping students for a life of integrity, faith, and impact.', 50);
 </script>
 
 </body>
