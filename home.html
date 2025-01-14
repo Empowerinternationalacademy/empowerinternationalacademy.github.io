@@ -10,15 +10,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e9ecef; /* Light gray background */
+            background: linear-gradient(to bottom right, #66B2FF, #003366); /* Gradient background */
+            color: #003366; /* Darker text color for readability */
         }
         header {
-            background-color: #0033A0; /* Decolste Blue */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for header */
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Space between logo and hamburger */
+            justify-content: space-between;
             padding: 10px 20px;
-            color: white; /* Text color in header */
+            color: #003366; /* Darker text color in header */
         }
         .header-title {
             font-size: 1.5rem;
@@ -37,9 +38,9 @@
             margin-right: 10px;
         }
         .logo {
-            width: 100%; /* Responsive logo */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 50%; /* Keep logo within circle */
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
             object-fit: cover;
         }
         .hamburger {
@@ -48,7 +49,7 @@
         .bar {
             height: 3px;
             width: 25px;
-            background-color: white; /* Hamburger bar color */
+            background-color: #003366; /* Darker color for hamburger */
             margin: 3px 0;
             transition: 0.4s;
         }
@@ -58,7 +59,7 @@
             left: -250px;
             width: 250px;
             height: 100%;
-            background-color: white; /* Sidebar background */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for sidebar */
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             transition: left 0.3s ease;
             z-index: 1000;
@@ -72,21 +73,21 @@
             font-size: 20px;
             cursor: pointer;
             margin-bottom: 20px;
-            color: #0033A0; /* Close button color */
+            color: #003366; /* Dark close button color */
         }
         .sidebar h3 {
             margin: 0 0 20px;
-            color: #0033A0; /* Sidebar header color */
+            color: #003366; /* Dark sidebar header color */
         }
         .sidebar a {
             display: block;
-            color: #333; /* Link color */
+            color: #003366; /* Darker link color */
             text-decoration: none;
             padding: 10px 0;
             transition: background 0.3s;
         }
         .sidebar a:hover {
-            background-color: #f0f0f0; /* Hover effect */
+            background-color: #80B3FF; /* Hover effect */
         }
         .slideshow-container {
             position: relative;
@@ -104,7 +105,7 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            color: white;
+            color: white; /* White text for better contrast on images */
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
@@ -112,66 +113,69 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background: #ffffff; /* Content background */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for content */
+            color: white; /* White text for contrast */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
             text-align: left;
         }
         .content h3 {
-            font-size: 2rem; /* Adjusted font size */
+            font-size: 2rem;
             margin-bottom: 10px;
             font-weight: bold;
-            line-height: 1.2; /* Line height adjustment */
-            color: #0033A0; /* Heading color */
-            border-left: 4px solid #00A651; /* Green left border */
-            padding-left: 15px; /* Padding for the left border */
-            display: inline-block; /* Inline block for line effect */
+            color: #ffffff; /* White heading color */
         }
         .content p {
-            margin: 20px 0; /* Spacing adjustments */
+            margin: 20px 0;
             line-height: 1.6;
-            color: #555; /* Slightly lighter text color */
+            color: #e0e0e0; /* Lighter text color for paragraphs */
         }
         .paragraph-container {
-            max-width: 800px; /* Limit max width */
-            margin: 40px auto; /* Center the container */
+            max-width: 800px;
+            margin: 40px auto;
             display: flex;
-            flex-direction: column; /* Stack paragraphs vertically */
-            gap: 20px; /* Space between paragraphs */
+            flex-direction: column;
+            gap: 20px;
         }
         .paragraph {
             padding: 20px;
-            border-radius: 15px; /* Rounded edges */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            color: #0033A0; /* Text color */
-            text-align: center; /* Center text in paragraph */
+            border-radius: 15px;
+            color: #e0e0e0; /* Light gray text for contrast */
+            text-align: center;
+            background-color: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for paragraphs */
         }
         .vision {
-            background-color: #0033A0; /* Blue background */
-            color: white; /* White text */
+            background-color: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for vision */
+            color: #ffffff; /* White text for contrast */
             font-size: 1.5rem; /* Increased font size */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
         .core-values {
             background-color: white; /* White inner color */
             color: #0033A0; /* Blue text */
             border: 5px solid #0033A0; /* Blue outline */
-            border-radius: 50%; /* Circular shape */
-            padding: 20px; /* Reduced padding */
+            border-radius: 50%;
+            padding: 20px;
             display: flex;
-            flex-direction: column; /* Stack title and content */
+            flex-direction: column;
             align-items: center;
-            justify-content: center; /* Center content */
-            text-align: center; /* Center text */
-            width: 300px; /* Fixed width for the circle */
-            height: 300px; /* Fixed height for the circle */
-            margin: 0 auto; /* Center the circle */
-            animation: bounce 2s infinite; /* Bouncing animation */
-            font-size: 1.5rem; /* Increased font size for Core Values */
+            justify-content: center;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            animation: bounce 2s infinite;
+            font-size: 1.5rem;
         }
         .mission {
-            background-color: #00A651; /* Lemon green background */
-            color: white; /* White text */
-            font-size: 1.5rem; /* Increased font size */
+            background-color: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for mission */
+            color: #ffffff; /* White text for contrast */
+            font-size: 1.5rem;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
@@ -186,17 +190,17 @@
         }
         @media (max-width: 600px) {
             .header-title {
-                font-size: 1.2rem; /* Smaller font size for mobile */
+                font-size: 1.2rem;
             }
             .content h3 {
-                font-size: 1.5rem; /* Smaller heading for mobile */
+                font-size: 1.5rem;
             }
             .paragraph-container {
-                width: 90%; /* Increase width on mobile */
+                width: 90%;
             }
             .core-values {
-                width: 80%; /* Responsive width for mobile */
-                height: auto; /* Allow height to adjust */
+                width: 80%;
+                height: auto;
             }
         }
     </style>
@@ -220,7 +224,7 @@
 <div class="sidebar" id="sidebar">
     <span class="close-btn" id="close-btn">&times;</span>
     <h3>Menu</h3>
-    <a href="#">EIA NEWS </a>
+    <a href="#">EIA NEWS</a>
     <a href="#">Leadership Structure</a>
     <a href="#">Chatting Forum</a>
     <a href="#">Admission</a>
@@ -229,8 +233,8 @@
 <div class="slideshow-container">
     <div class="mySlides" style="background-image: url('img/drone.jpg');">
         <div class="text">
-            <h2 style="background-color: greenyellow;">EIA PREMISES</h2>
-            <p style="background-color: greenyellow;">Beautiful classrooms and blocks for conducive schooling</p>
+            <h2>EIA PREMISES</h2>
+            <p>Beautiful classrooms and blocks for conducive schooling</p>
         </div>
     </div>
     <div class="mySlides" style="background-image: url('img/messi.JPG');">
@@ -241,8 +245,8 @@
     </div>
     <div class="mySlides" style="background-image: url('img/ga.jpg');">
         <div class="text">
-            <h2 style="background-color: greenyellow;">SPORTS ARE PART OF US</h2>
-            <p style="background-color: greenyellow;">Games are participated through boys and girls</p>
+            <h2>SPORTS ARE PART OF US</h2>
+            <p>Games are participated through boys and girls</p>
         </div>
     </div>
     <div class="mySlides" style="background-image: url('img/re.jpg');">
@@ -270,7 +274,6 @@
     <p></p>
 </div>
 
-<!-- New Section for Vision, Core Values, and Mission -->
 <div class="paragraph-container">
     <div class="paragraph vision">
         <h4>Vision</h4>
@@ -301,7 +304,6 @@
         sidebar.classList.remove('active');
     });
 
-    // Close sidebar if clicked outside
     window.addEventListener('click', (event) => {
         if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
             sidebar.classList.remove('active');
