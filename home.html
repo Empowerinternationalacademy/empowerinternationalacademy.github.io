@@ -10,16 +10,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom right, #66B2FF, #003366); /* Gradient background */
-            color: #003366; /* Darker text color for readability */
+            background: linear-gradient(to bottom right, #66B2FF, #003366);
+            color: #003366;
         }
         header {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for header */
+            background-color: rgba(255, 255, 255, 0.8);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            color: #003366; /* Darker text color in header */
+            color: #003366;
         }
         .header-title {
             font-size: 1.5rem;
@@ -31,7 +31,7 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            background-color: white; /* White background for the logo */
+            background-color: white;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -49,7 +49,7 @@
         .bar {
             height: 3px;
             width: 25px;
-            background-color: #003366; /* Darker color for hamburger */
+            background-color: #003366;
             margin: 3px 0;
             transition: 0.4s;
         }
@@ -59,7 +59,7 @@
             left: -250px;
             width: 250px;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for sidebar */
+            background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             transition: left 0.3s ease;
             z-index: 1000;
@@ -73,21 +73,21 @@
             font-size: 20px;
             cursor: pointer;
             margin-bottom: 20px;
-            color: #003366; /* Dark close button color */
+            color: #003366;
         }
         .sidebar h3 {
             margin: 0 0 20px;
-            color: #003366; /* Dark sidebar header color */
+            color: #003366;
         }
         .sidebar a {
             display: block;
-            color: #003366; /* Darker link color */
+            color: #003366;
             text-decoration: none;
             padding: 10px 0;
             transition: background 0.3s;
         }
         .sidebar a:hover {
-            background-color: #80B3FF; /* Hover effect */
+            background-color: #80B3FF;
         }
         .slideshow-container {
             position: relative;
@@ -105,7 +105,7 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            color: white; /* White text for better contrast on images */
+            color: white;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
@@ -113,8 +113,8 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for content */
-            color: white; /* White text for contrast */
+            background: rgba(0, 51, 102, 0.8);
+            color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
             text-align: left;
@@ -123,12 +123,12 @@
             font-size: 2rem;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #ffffff; /* White heading color */
+            color: #ffffff;
         }
         .content p {
             margin: 20px 0;
             line-height: 1.6;
-            color: #e0e0e0; /* Lighter text color for paragraphs */
+            color: #e0e0e0;
         }
         .paragraph-container {
             max-width: 800px;
@@ -140,22 +140,22 @@
         .paragraph {
             padding: 20px;
             border-radius: 15px;
-            color: #e0e0e0; /* Light gray text for contrast */
+            color: #e0e0e0;
             text-align: center;
-            background-color: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for paragraphs */
+            background-color: rgba(0, 51, 102, 0.8);
         }
         .vision {
-            background-color: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for vision */
-            color: #ffffff; /* White text for contrast */
-            font-size: 1.5rem; /* Increased font size */
+            background-color: rgba(0, 51, 102, 0.8);
+            color: #ffffff;
+            font-size: 1.5rem;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
         }
         .core-values {
-            background-color: white; /* White inner color */
-            color: #0033A0; /* Blue text */
-            border: 5px solid #0033A0; /* Blue outline */
+            background-color: white;
+            color: #0033A0;
+            border: 5px solid #0033A0;
             border-radius: 50%;
             padding: 20px;
             display: flex;
@@ -170,12 +170,47 @@
             font-size: 1.5rem;
         }
         .mission {
-            background-color: rgba(0, 51, 102, 0.8); /* Semi-transparent dark blue for mission */
-            color: #ffffff; /* White text for contrast */
+            background-color: rgba(0, 51, 102, 0.8);
+            color: #ffffff;
             font-size: 1.5rem;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+        }
+        .objectives {
+            text-align: center;
+            margin: 40px auto;
+        }
+        .objective {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #90EE90; /* Light green */
+            color: white;
+            border-radius: 50px; /* Oval shape */
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s;
+            font-size: 1.1rem; /* Increase font size */
+        }
+        .objective:hover {
+            background-color: #66CC66; /* Darker green on hover */
+        }
+        .description {
+            display: none;
+            margin-top: 20px;
+            padding: 20px; /* Increased padding for better shape */
+            background-color: rgba(0, 51, 102, 0.8);
+            color: white;
+            border-radius: 50px; /* Oval shape */
+            text-align: left;
+            font-size: 1.5rem; /* Increased font size for visibility */
+            transition: display 0.1s ease-in; /* Quick appearance */
+            animation: fadeIn 0.2s; /* Fade-in animation */
+        }
+        .key-objectives-title {
+            font-size: 2.5rem; /* Increase size */
+            color: white; /* White color */
+            margin-bottom: 20px; /* Space below */
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
@@ -187,6 +222,10 @@
             60% {
                 transform: translateY(-5px);
             }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         @media (max-width: 600px) {
             .header-title {
@@ -224,9 +263,13 @@
 <div class="sidebar" id="sidebar">
     <span class="close-btn" id="close-btn">&times;</span>
     <h3>Menu</h3>
-    <a href="#">EIA NEWS</a>
+     <a href="#">EIA NEWS</a>
     <a href="#">Leadership Structure</a>
+    <a href="#">School Activities</a>
+    <a href="#">Clubs</a>
     <a href="#">Chatting Forum</a>
+    <a href="#">School Calender</a>
+    <a href="#">Past Papers</a>
     <a href="#">Admission</a>
 </div>
 
@@ -255,7 +298,7 @@
             <p></p>
         </div>
     </div>
-    <div class="mySlides" style="background-image: url('img/ICT.jpg');">
+    <div class="mySlides" style="background-image: url('img/danny.jpg');">
         <div class="text">
             <h2></h2>
             <p></p>
@@ -276,20 +319,51 @@
 
 <div class="paragraph-container">
     <div class="paragraph vision">
-        <h4>Vision</h4>
+        <h3>VISION</h3>
         <p>Our vision is to equip students for a life of integrity, faith, and impact. We accomplish that by providing a world-class, Christ-centered education that fosters creativity and instills wisdom, love, and a desire to serve.</p>
     </div>
+<div class="objectives">
+    <h4 class="key-objectives-title">OUR KEY OBJECTIVES</h4>
+    <div class="objective" onclick="toggleDescription('christianCharacter')">Christian Character</div>
+    <div class="objective" onclick="toggleDescription('educationExcellence')">Education Excellence</div>
+    <div class="objective" onclick="toggleDescription('creativeExpression')">Creative Expression</div>
+    <div class="objective" onclick="toggleDescription('buildingCommunity')">Building Community</div>
+    <div class="objective" onclick="toggleDescription('communication')">Communication</div>
+    <div class="objective" onclick="toggleDescription('futureAuthoring')">Future Authoring</div>
+</div>
+
+<div id="christianCharacter" class="description">
+    Developing students’ worldview based on a Christ-centered foundation that creates a desire to seek truth in Jesus and make disciples.
+</div>
+<div id="educationExcellence" class="description">
+    Creating critical thinkers and problem solvers who possess the knowledge and abilities to compete globally.
+</div>
+<div id="creativeExpression" class="description">
+    Promoting creativity in the pursuit to worship God through self-discovery and the development of talent and ability.
+</div>
+<div id="buildingCommunity" class="description">
+    Creating a harmonious environment through servant leadership on campus that can extend to families, communities, and beyond.
+</div>
+<div id="communication" class="description">
+    Creating excellent communicators with the ability to speak and write with fact-based reasoning to contend with the world in an influential manner.
+</div>
+<div id="futureAuthoring" class="description">
+    Focusing students on life goal development and planning to orient and author direction that will lead to the fulfillment of their God-given purpose.
+</div>
+
+
     <div class="paragraph core-values">
-        <h4>Core Values</h4>
-        <p>Excellence</p>
-        <p>Integrity</p>
-        <p>Action</p>
+        <h3>CORE VALUES</h3>
+        <p>EXCELLENCE</p>
+        <p>INTEGRITY</p>
+        <p>ACTION</p>
     </div>
     <div class="paragraph mission">
-        <h4>Mission</h4>
+        <h4>MISSION</h4>
         <p>Equipping students for a life of integrity, faith, and impact.</p>
     </div>
 </div>
+
 
 <script>
     const hamburger = document.getElementById('hamburger');
@@ -323,7 +397,24 @@
         slides[slideIndex - 1].style.display = "block";  
         setTimeout(showSlides, 10000); // Change image every 10 seconds
     }
+
+    function toggleDescription(id) {
+        const descriptions = document.querySelectorAll('.description');
+        descriptions.forEach(desc => {
+            desc.style.display = 'none'; // Hide all descriptions
+        });
+        const currentDescription = document.getElementById(id);
+        currentDescription.style.display = 'block'; // Show current description
+        currentDescription.style.animation = 'fadeIn 0.2s'; // Quick fade-in animation
+    }
 </script>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
 
 </body>
 </html>
