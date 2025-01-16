@@ -75,13 +75,11 @@
             margin-bottom: 20px;
             color: #003366;
         }
-        .sidebar h3 {
-            margin: 0 0 20px;
+        .sidebar h3, .sidebar a {
             color: #003366;
         }
         .sidebar a {
             display: block;
-            color: #003366;
             text-decoration: none;
             padding: 10px 0;
             transition: background 0.3s;
@@ -113,22 +111,13 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background: rgba(0, 51, 102, 0.8);
-            color: white;
+            background: white; /* Change background to white */
+            color: #003366; /* Adjust text color for contrast */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
-            text-align: left;
         }
-        .content h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-        .content p {
+        .content h3, .content p {
             margin: 20px 0;
-            line-height: 1.6;
-            color: #e0e0e0;
         }
         .paragraph-container {
             max-width: 800px;
@@ -139,43 +128,35 @@
         }
         .paragraph {
             padding: 20px;
-            border-radius: 15px;
-            color: #e0e0e0;
+            border-radius: 10px;
+            color: #003366; /* Adjust text color for contrast */
             text-align: center;
-            background-color: rgba(0, 51, 102, 0.8);
+            background-color: white; /* Change background to white */
         }
-        .vision {
-            background-color: rgba(0, 51, 102, 0.8);
-            color: #ffffff;
+        .vision, .mission {
+            background-color: white; /* Change background to white */
+            color: #003366; /* Adjust text color for contrast */
             font-size: 1.5rem;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
         }
         .core-values {
-            background-color: white;
+            background-color: white; /* Keep background white */
             color: #0033A0;
             border: 5px solid #0033A0;
             border-radius: 50%;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
             width: 300px;
             height: 300px;
             margin: 0 auto;
             animation: bounce 2s infinite;
-            font-size: 1.5rem;
-        }
-        .mission {
-            background-color: rgba(0, 51, 102, 0.8);
-            color: #ffffff;
-            font-size: 1.5rem;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px; /* Adjust padding */
+            text-align: center; /* Center the text */
+            font-size: 1.5rem; /* Adjust font size */
         }
         .objectives {
             text-align: center;
@@ -198,49 +179,33 @@
         .description {
             display: none;
             margin-top: 20px;
-            padding: 20px; /* Increased padding for better shape */
-            background-color: rgba(0, 51, 102, 0.8);
-            color: white;
-            border-radius: 50px; /* Oval shape */
+            padding: 20px; 
+            background-color: white; /* Change background to white */
+            color: #003366; /* Adjust text color for contrast */
+            border-radius: 10px; /* Slightly rounded corners */
             text-align: left;
-            font-size: 1.5rem; /* Increased font size for visibility */
-            transition: display 0.1s ease-in; /* Quick appearance */
-            animation: fadeIn 0.2s; /* Fade-in animation */
+            font-size: 1.5rem; 
+            animation: fadeIn 0.2s; 
         }
         .key-objectives-title {
-            font-size: 2.5rem; /* Increase size */
-            color: white; /* White color */
-            margin-bottom: 20px; /* Space below */
+            font-size: 2.5rem; 
+            color: #003366; /* Adjust text color for contrast */
+            margin-bottom: 20px; 
         }
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
         @media (max-width: 600px) {
-            .header-title {
-                font-size: 1.2rem;
-            }
-            .content h3 {
-                font-size: 1.5rem;
-            }
-            .paragraph-container {
-                width: 90%;
-            }
-            .core-values {
-                width: 80%;
-                height: auto;
-            }
+            .header-title { font-size: 1.2rem; }
+            .content h3 { font-size: 1.5rem; }
+            .paragraph-container { width: 90%; }
+            .core-values { width: 80%; height: auto; }
         }
     </style>
 </head>
@@ -263,12 +228,12 @@
 <div class="sidebar" id="sidebar">
     <span class="close-btn" id="close-btn">&times;</span>
     <h3>Menu</h3>
-     <a href="#">EIA NEWS</a>
+    <a href="#">EIA NEWS</a>
     <a href="#">Leadership Structure</a>
     <a href="#">School Activities</a>
     <a href="#">Clubs</a>
     <a href="#">Chatting Forum</a>
-    <a href="#">School Calender</a>
+    <a href="#">School Calendar</a>
     <a href="#">Past Papers</a>
     <a href="#">Admission</a>
 </div>
@@ -322,37 +287,36 @@
         <h3>VISION</h3>
         <p>Our vision is to equip students for a life of integrity, faith, and impact. We accomplish that by providing a world-class, Christ-centered education that fosters creativity and instills wisdom, love, and a desire to serve.</p>
     </div>
-<div class="objectives">
-    <h4 class="key-objectives-title">OUR KEY OBJECTIVES</h4>
-    <div class="objective" onclick="toggleDescription('christianCharacter')">Christian Character</div>
-    <div class="objective" onclick="toggleDescription('educationExcellence')">Education Excellence</div>
-    <div class="objective" onclick="toggleDescription('creativeExpression')">Creative Expression</div>
-    <div class="objective" onclick="toggleDescription('buildingCommunity')">Building Community</div>
-    <div class="objective" onclick="toggleDescription('communication')">Communication</div>
-    <div class="objective" onclick="toggleDescription('futureAuthoring')">Future Authoring</div>
-</div>
+    <div class="objectives">
+        <h4 class="key-objectives-title">OUR KEY OBJECTIVES</h4>
+        <div class="objective" onclick="toggleDescription('christianCharacter')">Christian Character</div>
+        <div class="objective" onclick="toggleDescription('educationExcellence')">Education Excellence</div>
+        <div class="objective" onclick="toggleDescription('creativeExpression')">Creative Expression</div>
+        <div class="objective" onclick="toggleDescription('buildingCommunity')">Building Community</div>
+        <div class="objective" onclick="toggleDescription('communication')">Communication</div>
+        <div class="objective" onclick="toggleDescription('futureAuthoring')">Future Authoring</div>
+    </div>
 
-<div id="christianCharacter" class="description">
-    Developing students’ worldview based on a Christ-centered foundation that creates a desire to seek truth in Jesus and make disciples.
-</div>
-<div id="educationExcellence" class="description">
-    Creating critical thinkers and problem solvers who possess the knowledge and abilities to compete globally.
-</div>
-<div id="creativeExpression" class="description">
-    Promoting creativity in the pursuit to worship God through self-discovery and the development of talent and ability.
-</div>
-<div id="buildingCommunity" class="description">
-    Creating a harmonious environment through servant leadership on campus that can extend to families, communities, and beyond.
-</div>
-<div id="communication" class="description">
-    Creating excellent communicators with the ability to speak and write with fact-based reasoning to contend with the world in an influential manner.
-</div>
-<div id="futureAuthoring" class="description">
-    Focusing students on life goal development and planning to orient and author direction that will lead to the fulfillment of their God-given purpose.
-</div>
+    <div id="christianCharacter" class="description">
+        Developing students’ worldview based on a Christ-centered foundation that creates a desire to seek truth in Jesus and make disciples.
+    </div>
+    <div id="educationExcellence" class="description">
+        Creating critical thinkers and problem solvers who possess the knowledge and abilities to compete globally.
+    </div>
+    <div id="creativeExpression" class="description">
+        Promoting creativity in the pursuit to worship God through self-discovery and the development of talent and ability.
+    </div>
+    <div id="buildingCommunity" class="description">
+        Creating a harmonious environment through servant leadership on campus that can extend to families, communities, and beyond.
+    </div>
+    <div id="communication" class="description">
+        Creating excellent communicators with the ability to speak and write with fact-based reasoning to contend with the world in an influential manner.
+    </div>
+    <div id="futureAuthoring" class="description">
+        Focusing students on life goal development and planning to orient and author direction that will lead to the fulfillment of their God-given purpose.
+    </div>
 
-
-    <div class="paragraph core-values">
+    <div class="core-values">
         <h3>CORE VALUES</h3>
         <p>EXCELLENCE</p>
         <p>INTEGRITY</p>
@@ -363,7 +327,6 @@
         <p>Equipping students for a life of integrity, faith, and impact.</p>
     </div>
 </div>
-
 
 <script>
     const hamburger = document.getElementById('hamburger');
@@ -408,13 +371,6 @@
         currentDescription.style.animation = 'fadeIn 0.2s'; // Quick fade-in animation
     }
 </script>
-
-<style>
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-</style>
 
 </body>
 </html>
