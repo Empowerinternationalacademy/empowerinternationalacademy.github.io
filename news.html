@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+    <style>
+        html, body {
+            height: 100%; /* Full height */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #ffffff; /* White background */
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: #0072bc; /* Header color */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            width: 50px; /* Logo size */
+            height: 50px; /* Set height for circular form */
+            border-radius: 50%; /* Circular shape */
+            background-color: white; /* White background */
+            padding: 5px; /* Padding for better visibility */
+            display: flex; /* Use flex to center the image */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            overflow: hidden; /* Hide overflow to maintain circle */
+            position: relative; /* Make it relative for z-index */
+            z-index: 10; /* Bring logo to the front */
+        }
+        .logo img {
+            width: 100%; /* Full width of the logo */
+            height: 100%; /* Full height of the logo */
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+            border-radius: 50%; /* Ensure logo image is circular */
+        }
+        .sidebar {
+            display: none; /* Hidden by default */
+            flex-direction: column; /* Stack items vertically */
+            position: fixed; /* Fixed position */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            background: white; /* White background for sidebar */
+            width: 250px; /* Width of the sidebar */
+            height: 100%; /* Full height */
+            max-height: 100%; /* Prevent exceeding viewport height */
+            padding-top: 20px; /* Space from the top */
+            transition: transform 0.3s ease; /* Transition effect */
+            transform: translateX(-100%); /* Start off-screen */
+            z-index: 100; /* Ensure it is above other content */
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Optional shadow for depth */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .sidebar.show {
+            display: flex; /* Show the sidebar when activated */
+            transform: translateX(0); /* Move into view */
+        }
+        .sidebar a {
+            padding: 10px 20px; /* Padding for links */
+            color: #0072bc; /* Dark blue text */
+            text-decoration: none;
+            text-align: left;
+            display: flex; /* Flex for alignment */
+            align-items: center; /* Center items vertically */
+        }
+        .sidebar a:hover {
+            background: #e0e0e0; /* Light gray on hover */
+        }
+        .sidebar .logo {
+            width: 30px; /* Smaller logo size for sidebar */
+            height: 30px; /* Set height for circular form */
+            margin-right: 10px; /* Space between logo and text */
+        }
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            margin: 10px; /* Space around the hamburger */
+            position: absolute; /* Position in header */
+            right: 20px; /* Align to the right */
+            top: 10px; /* Align to the top */
+        }
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        .close-btn {
+            color: #0072bc; /* Dark blue for close button */
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex-direction: column; /* Stack sections vertically */
+            align-items: center; /* Center sections */
+            padding: 20px;
+            width: 100%; /* Full width */
+            flex-grow: 1; /* Allow main to take available space */
+            box-sizing: border-box; /* Include padding in width calculations */
+        }
+        section {
+            border-radius: 5px; /* Rounded corners */
+            margin: 10px 0; /* Vertical margin */
+            padding: 15px;
+            width: 100%; /* Full width */
+            max-width: 800px; /* Maximum width for larger screens */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for depth */
+            color: white; /* White text for contrast */
+            text-align: center; /* Center-align text */
+        }
+        /* Different background colors for each section */
+        #eia-campus {
+            background: #90ee90; /* Light green */
+        }
+        #sports {
+            background: #d9534f; /* Red */
+        }
+        #technology {
+            background: #5bc0de; /* Light Blue */
+        }
+        #current-affairs {
+            background: #5cb85c; /* Green */
+        }
+        #entertainment {
+            background: #f0ad4e; /* Yellow */
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            position: relative; /* For positioning the graphic */
+        }
+        h2::before {
+            content: ''; /* Empty content for the graphic */
+            background-image: url('graphic.png'); /* Path to your graphic */
+            background-size: contain; /* Adjust size */
+            background-repeat: no-repeat; /* No repeat */
+            width: 30px; /* Width of the graphic */
+            height: 30px; /* Height of the graphic */
+            position: absolute; /* Positioning */
+            left: -40px; /* Adjust position */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Center vertically */
+        }
+        .media {
+            margin: 0 auto; /* Center the media */
+            width: 70%; /* Set a specific width for images */
+        }
+        img {
+            width: 100%; /* Full width of the container */
+            border-radius: 5px;
+        }
+        .image-description {
+            font-size: 0.9em;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for visibility */
+            color: #333; /* Dark text for contrast */
+            padding: 5px; /* Padding around text */
+            margin-top: 10px; /* Space between image and description */
+            border-radius: 5px; /* Rounded corners */
+            display: inline-block; /* Fit to content */
+        }
+        .read-more {
+            display: inline-block; /* Fit to content */
+            margin-top: 10px; /* Space above the button */
+            padding: 10px 20px; /* Padding for the button */
+            background-color: #0072bc; /* Button color */
+            color: white; /* Button text color */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .read-more:hover {
+            background-color: #005fa3; /* Darker shade on hover */
+        }
+        video {
+            width: 90%; /* Adjust width for the video */
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0072bc; /* Footer color */
+            color: white;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/log.png" alt="Logo"> <!-- Logo Image -->
+    </div>
+    <h1>EIA NEWS SECTION</h1>
+    <div class="hamburger" id="hamburger" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <span class="close-btn" id="close-btn" onclick="toggleSidebar()">&times;</span>
+    <h3>Menu</h3>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> CCPS Programs</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> Upcoming Events</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> Upcoming Birthdays</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> EIA News</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> Announcements</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> Technology</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> Sports</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> Current Affairs</a>
+    <a href="#"><div class="logo"><!--img src="img/log.png" alt="Logo"--></div> Entertainment</a>
+</div>
+
+<main>
+    <section id="eia-campus">
+        <h2>EIA Campus</h2>
+        <div class="media">
+            <img src="img/new.jpg" alt="News club">
+            <h2><p class="image-description">The news Anchor here to bring you the latest news in EIA With all rumours and news and gossips </p></h2>
+            <a class="read-more" href="eia.html">Read More</a>
+        </div>
+        <video controls>
+            <source src="img/m.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    
+    <section id="sports">
+        <h2>Sports</h2>
+        <div class="media">
+            <img src="img/soc.jpg" alt="Sports Image">
+            <p class="image-description">We have the latestest news sponsored around the world and in EIA in across all sports centre</p>
+            <a class="read-more" href="eia.html">Read More</a>
+        </div>
+        <!--video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video-->
+    </section>
+    
+    <section id="technology">
+        <h2>Technology</h2>
+        <div class="media">
+            <img src="img/ICT.jpg" alt="">
+            <p class="image-description">Discover the latest technological innovations.</p>
+            <a class="read-more" href="eia.html">Read More</a>
+        </div>
+        <!--video controls>
+            <source src="video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video-->
+    </section>
+    
+    <section id="current-affairs">
+        <h2>Current Affairs</h2>
+        <div class="media">
+            <img src="image7.jpg" alt="">
+            <p class="image-description">Stay updated with current news.</p>
+            <a class="read-more" href="eia.html">Read More</a>
+        </div>
+        <!--video controls>
+            <source src="video4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video-->
+    </section>
+    
+    <section id="entertainment">
+        <h2>Entertainment</h2>
+        <div class="media">
+            <img src="image9.jpg" alt="">
+            <p class="image-description">Latest trends in entertainment.</p>
+            <a class="read-more" href="eia.html">Read More</a>
+        </div>
+        <!--video controls>
+            <source src="video5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video-->
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 News Website. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("show"); // Toggle the show class
+    }
+</script>
+
+</body>
+</html>
