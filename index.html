@@ -41,7 +41,7 @@
             padding: 12px 20px; /* Increased padding for better click area */
             border-radius: 5px; /* Rounded corners */
             transition: background-color 0.3s; /* Smooth transition */
-            font-size: 16px; /* Increased font size for better readability */
+            font-size: 18px; /* Increased font size for better readability */
         }
 
         .header-menu a:hover {
@@ -78,9 +78,8 @@
 
         .objectives {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Center objectives */
-            gap: 10px; /* Space between objective boxes */
+            flex-direction: column; /* Arrange objectives vertically */
+            align-items: center; /* Center objectives */
             margin: 20px 0;
             padding: 0 10px; /* Padding for responsiveness */
         }
@@ -88,16 +87,17 @@
         .objective {
             background-color: lightgreen; /* Light green background for all objectives */
             color: white;
-            padding: 10px 15px; /* Adjust padding for better oval shape */
+            padding: 15px 20px; /* Adjust padding for better oval shape */
             border-radius: 25px; /* Larger border radius for oval shape */
             cursor: pointer;
-            transition: background-color 0.3s;
-            display: inline-flex; /* Center text vertically */
+            transition: background-color 0.3s; /* Smooth hover transition */
+            display: flex; /* Center text vertically */
             align-items: center; /* Center text vertically */
             justify-content: center; /* Center text horizontally */
-            height: 40px; /* Fixed height for consistency */
-            flex: 1 1 150px; /* Allow flexible growth with a minimum width */
-            max-width: 200px; /* Max width for larger screens */
+            height: 50px; /* Increased height for better visibility */
+            width: 300px; /* Fixed width for consistency */
+            font-size: 20px; /* Increased font size for better readability */
+            margin: 10px 0; /* Space between objectives */
         }
 
         .objective:hover {
@@ -107,9 +107,13 @@
         .objective-description {
             display: none;
             margin-top: 10px;
-            background-color: #f1f1f1;
-            padding: 10px;
-            border-radius: 5px;
+            background-color: #ffffff; /* White background for better contrast */
+            padding: 15px; /* Increased padding for oval shape */
+            border-radius: 25px; /* Oval shape */
+            border: 2px solid blue; /* Blue outline */
+            color: black; /* Text color */
+            width: 300px; /* Fixed width for consistency */
+            text-align: center; /* Center text */
         }
 
         .footer {
@@ -119,6 +123,21 @@
 
         /* Responsive Styles */
         @media (max-width: 600px) {
+            .header {
+                flex-direction: column; /* Stack items vertically */
+                align-items: flex-start; /* Align items to left */
+            }
+
+            .logo img {
+                width: 40px; /* Smaller logo */
+                height: 40px; /* Smaller logo */
+            }
+
+            .header-menu a {
+                padding: 10px 15px; /* Adjust button padding */
+                font-size: 16px; /* Adjust font size */
+            }
+
             .objectives-title {
                 font-size: 28px; /* Smaller font size on small screens */
             }
@@ -126,10 +145,11 @@
             .objective {
                 padding: 10px 10px; /* Adjust padding for smaller screens */
                 height: 35px; /* Reduce height */
+                font-size: 18px; /* Smaller font size */
             }
 
-            .header-menu a {
-                padding: 10px 15px; /* Adjust button padding */
+            .objective-description {
+                width: 90%; /* Responsive width for smaller screens */
             }
         }
     </style>
@@ -156,42 +176,43 @@
         <div class="content-section">
             <h1> Empower International Academy <span class="highlight">(EIA)</span></h1>
             <p> To provide a world-class Christ Centered Education That fosters Creativity & instills Wisdom Love & A desire to serve</p>
-            <!--a href="#" class="discover-more">Discover more</a-->
         </div>
-<div class="slideshow">
-    <div class="slide active">
-        <div class="title">Our Vision</div>
-        <p>Our vision is to equip students for a life of integrity, faith, and impact. We accomplish that by providing a world-class, Christ-centered education that fosters creativity and instills wisdom, love, and a desire to serve.</p>
-    </div>
-    <div class="slide">
-        <div class="title">Our Mission</div>
-        <p>Equipping students for a life of integrity, faith, and impact.</p>
-    </div>
-    <div class="slide">
-        <div class="title">Our Core Values</div>
-        <ul>
-            <li>Excellence</li>
-            <li>Integrity</li>
-            <li>Action</li>
-        </ul>
-    </div>
-</div>
 
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const slideInterval = 8000; // 8 seconds
+        <div class="slideshow">
+            <div class="slide active">
+                <div class="title">Our Vision</div>
+                <p>Our vision is to equip students for a life of integrity, faith, and impact. We accomplish that by providing a world-class, Christ-centered education that fosters creativity and instills wisdom, love, and a desire to serve.</p>
+            </div>
+            <div class="slide">
+                <div class="title">Our Mission</div>
+                <p>Equipping students for a life of integrity, faith, and impact.</p>
+            </div>
+            <div class="slide">
+                <div class="title">Our Core Values</div>
+                <ul>
+                    <li>Excellence</li>
+                    <li>Integrity</li>
+                    <li>Action</li>
+                </ul>
+            </div>
+        </div>
 
-    function showNextSlide() {
-        slides[currentSlide].classList.remove('active');
-        slides[currentSlide].classList.add('inactive');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.remove('inactive');
-        slides[currentSlide].classList.add('active');
-    }
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const slideInterval = 8000; // 8 seconds
 
-    setInterval(showNextSlide, slideInterval);
-</script>
+            function showNextSlide() {
+                slides[currentSlide].classList.remove('active');
+                slides[currentSlide].classList.add('inactive');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.remove('inactive');
+                slides[currentSlide].classList.add('active');
+            }
+
+            setInterval(showNextSlide, slideInterval);
+        </script>
+
         <div class="objectives-title">Our Key Objectives</div>
 
         <div class="objectives">
@@ -203,12 +224,12 @@
             <div class="objective" onclick="toggleDescription('authoring')">Future Authoring</div>
         </div>
 
-        <div id="char" class="objective-description">Developing students' character based on biblical principles.</div>
-        <div id="excellence" class="objective-description">Striving for excellence in all areas of education.</div>
-        <div id="expression" class="objective-description">Encouraging creative expression through various arts.</div>
-        <div id="community" class="objective-description">Fostering a sense of community and belonging.</div>
-        <div id="communication" class="objective-description">Enhancing communication skills for effective interaction.</div>
-        <div id="authoring" class="objective-description">Preparing students for future authorship and innovation.</div>
+        <div id="char" class="objective-description"> Developing students’ worldview based on a Christ-centered foundation that creates a desire to seek truth in Jesus and make disciples.</div>
+        <div id="excellence" class="objective-description">Creating critical thinkers and problem solvers who possess the knowledge and abilities to compete globally.</div>
+        <div id="expression" class="objective-description">Promoting creativity in the pursuit to worship God through self-discovery and the development of talent and ability.</div>
+        <div id="community" class="objective-description">Creating a harmonious environment through servant leadership on campus that can extend to families, communities, and beyond.</div>
+        <div id="communication" class="objective-description"> Creating excellent communicators with the ability to speak and write with fact-based reasoning to contend with the world in an influential manner.</div>
+        <div id="authoring" class="objective-description">Focusing students on life goal development and planning to orient and author direction that will lead to the fulfillment of their God-given purpose.</div>
 
         <div class="achievement-section">
             <h1>Our <span class="highlight">Achievements</span></h1>
@@ -222,20 +243,6 @@
     </div>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const slideInterval = 8000; // 8 seconds
-
-        function showNextSlide() {
-            slides[currentSlide].classList.remove('active');
-            slides[currentSlide].classList.add('inactive');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.remove('inactive');
-            slides[currentSlide].classList.add('active');
-        }
-
-        setInterval(showNextSlide, slideInterval);
-
         function toggleDescription(id) {
             const description = document.getElementById(id);
             if (description.style.display === "block") {
