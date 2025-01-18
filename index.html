@@ -4,21 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empower International Academy</title>
-    <link style="background: white; width: 200px; height: 200px; border-radius: 50%; object-fit: cover;" rel="icon" href="img/log.png" type="image/png">
+    <link rel="icon" href="img/log.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="eia.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6; /* Improved readability */
+        }
 
-  </head>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+
+        .logo img {
+            width: 50px; /* Adjust size for fixed header */
+            height: 50px; /* Adjust size for fixed header */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-menu a {
+            text-decoration: none;
+            color: white; /* Text color */
+            background-color: #007BFF; /* Button background color */
+            padding: 12px 20px; /* Increased padding for better click area */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition */
+            font-size: 16px; /* Increased font size for better readability */
+        }
+
+        .header-menu a:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        .sliding-images {
+            margin-top: 100px; /* Space for the fixed header */
+            display: flex; /* Make images responsive */
+            overflow-x: auto; /* Allow horizontal scrolling */
+        }
+
+        .sliding-images img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto; /* Maintain aspect ratio */
+            flex: 0 0 auto; /* Prevent images from shrinking */
+        }
+
+        .content-section, .achievement-section {
+            padding: 20px;
+            text-align: center; /* Center text for better alignment */
+        }
+
+        .objectives-title {
+            font-size: 36px; /* Increased font size */
+            margin: 20px 0; /* Margin for spacing */
+            color: blue; /* Change font color to blue */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+            font-weight: bold; /* Make the title bold */
+            background-color: white; /* Highlight background color */
+            padding: 10px; /* Padding around the text */
+            border-radius: 5px; /* Optional: rounded corners */
+        }
+
+        .objectives {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center objectives */
+            gap: 10px; /* Space between objective boxes */
+            margin: 20px 0;
+            padding: 0 10px; /* Padding for responsiveness */
+        }
+
+        .objective {
+            background-color: lightgreen; /* Light green background for all objectives */
+            color: white;
+            padding: 10px 15px; /* Adjust padding for better oval shape */
+            border-radius: 25px; /* Larger border radius for oval shape */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-flex; /* Center text vertically */
+            align-items: center; /* Center text vertically */
+            justify-content: center; /* Center text horizontally */
+            height: 40px; /* Fixed height for consistency */
+            flex: 1 1 150px; /* Allow flexible growth with a minimum width */
+            max-width: 200px; /* Max width for larger screens */
+        }
+
+        .objective:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        .objective-description {
+            display: none;
+            margin-top: 10px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .objectives-title {
+                font-size: 28px; /* Smaller font size on small screens */
+            }
+
+            .objective {
+                padding: 10px 10px; /* Adjust padding for smaller screens */
+                height: 35px; /* Reduce height */
+            }
+
+            .header-menu a {
+                padding: 10px 15px; /* Adjust button padding */
+            }
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <header class="header">
             <div class="logo">
-              <img style=" width: 200px; height: 200px; border-radius: 50%; object-fit: cover;" src="img/log.png" alt="EIA LOGO">
-
-
+                <img src="img/log.png" alt="EIA LOGO">
             </div>
             <nav class="header-menu">
                 <a href="login.html">Login</a>
-                <!--a href="#">Contact</a-->
             </nav>
         </header>
 
@@ -28,20 +151,13 @@
             <img src="img/jazzy.jpg" alt="">
             <img src="img/ga.jpg" alt="">
             <img src="img/ICT.jpg" alt="">
-            <!--img src="img/slide6.jpg" alt="Art class"-->
         </div>
 
         <div class="content-section">
             <h1> Empower International Academy <span class="highlight">(EIA)</span></h1>
-            <p> To provide a world class Christ Centered Education That fosters Creativity & instills Wisdom Love & A desire to serve</p>
-            <a href="#" class="discover-more">Discover more</a>
+            <p> To provide a world-class Christ Centered Education That fosters Creativity & instills Wisdom Love & A desire to serve</p>
+            <!--a href="#" class="discover-more">Discover more</a-->
         </div>
-
-
-<style>
-
-</style>
-
 <div class="slideshow">
     <div class="slide active">
         <div class="title">Our Vision</div>
@@ -76,54 +192,23 @@
 
     setInterval(showNextSlide, slideInterval);
 </script>
+        <div class="objectives-title">Our Key Objectives</div>
 
-
-        <div class="activity-section">
-            <h1>Explore Our <span class="highlight">Clubs & Activities</span></h1>
-            <p>At EIA, we offer a diverse range of clubs and extracurricular activities designed to nurture students' talents and interests. From arts and drama to technology and sports, there's something for everyone.</p>
-
-            <div class="club-info">
-                <img src="img/ICT.jpg" alt="Art Club">
-                <div class="details">
-                    <p><b>IT Club</b> The ICT Club
-Under the visionary leadership of ...., a passionate computer enthusiast, and the mentorship of their patron, Mr. Benon, the ICT Club stands as a hub of innovation and technological excellence at Empower International Academy. Comprising some of the school’s brightest minds, the club delves into coding, web design, and all things tech. They are the go-to team for any computer-related needs and have even created an impressive internal website for the school. The ICT Club continues to push the boundaries of creativity and technical expertise, shaping the digital future of the academy. </p>
-                   <a href="" style="display:inline-block;background:#28a745;color:white;padding:10px 20px;text-align:center;text-decoration:none;font-size:16px;border-radius:5px;cursor:pointer;">Learn More</a>
-
-                </div>
-            </div>
-
-            <div class="club-info">
-                <img src="img/Debate.jpg" alt="">
-                <div class="details">
-                    <p><b>Debate Club</b> The Debate Club
-Guided by the  leadership of Samuel Kayinja and the support of their patron, Mr. Atamba, the Debate Club shines as a platform for intellectual growth and eloquence. Renowned for their active participation in Model United Nations conferences, they proudly represent the school on prestigious stages. Within the club, members engage in rigorous debates that hone their critical thinking, public speaking, and analytical skills. The Debate Club continues to cultivate confident, articulate individuals who are unafraid to voice their ideas and shape conversations. <B>Global class</B> </p>
-                  <a href="debate.html" style="display:inline-block;background:#28a745;color:white;padding:10px 20px;text-align:center;text-decoration:none;font-size:16px;border-radius:5px;cursor:pointer;">Learn More</a>
-
-
-
-                </div>
-            </div>
-
-            <div class="club-info">
-                <img src="img/md.jpg" alt="">
-                <div class="details">
-                    <p><b>Music, Dance & Drama Club</b>  The Music, Dance, and Drama Club
-Under the inspiring leadership of Vincent and the mentorship of the esteemed music teacher, Mr. Paul, this vibrant club thrives as a hub for artistic expression. It unites instrumentalists, dancers, and singers in a harmonious blend of creativity and passion. The club's talented musicians skillfully play a variety of instruments, including guitars, bass guitars, saxophones, flutes, and more. Together, they create captivating performances that celebrate the beauty of EIA music, movement, and storytelling, leaving audiences spellbound.</p>
-                  <a href="" style="display:inline-block;background:#28a745;color:white;padding:10px 20px;text-align:center;text-decoration:none;font-size:16px;border-radius:5px;cursor:pointer;">Learn More</a>
-                </div>
-            </div>
-
-
-            <div class="club-info">
-                <img src="img/Art.jpg" alt="">
-                <div class="details">
-                    <p><b>Arts & Craft Club</b>The Art Club
-Led by the talented Wycliffe and guided by their patron, the dedicated art teacher, Ms. Dorine, the Art Club is a haven for imagination and creativity. Known for producing exceptional artwork, the club plays a pivotal role in beautifying the school, especially during important occasions. Through their innovative designs and artistic flair, they bring ideas to life, inspiring others to appreciate the transformative power of art. The Art Club is where passion and talent meet to create masterpieces that leave lasting impressions.</p>
-                    <a href="" style="display:inline-block;background:#28a745;color:white;padding:10px 20px;text-align:center;text-decoration:none;font-size:16px;border-radius:5px;cursor:pointer;">Learn More</a>
-
-                </div>
-            </div>
+        <div class="objectives">
+            <div class="objective" onclick="toggleDescription('char')">Christian Character</div>
+            <div class="objective" onclick="toggleDescription('excellence')">Education Excellence</div>
+            <div class="objective" onclick="toggleDescription('expression')">Creative Expression</div>
+            <div class="objective" onclick="toggleDescription('community')">Building Community</div>
+            <div class="objective" onclick="toggleDescription('communication')">Communication</div>
+            <div class="objective" onclick="toggleDescription('authoring')">Future Authoring</div>
         </div>
+
+        <div id="char" class="objective-description">Developing students' character based on biblical principles.</div>
+        <div id="excellence" class="objective-description">Striving for excellence in all areas of education.</div>
+        <div id="expression" class="objective-description">Encouraging creative expression through various arts.</div>
+        <div id="community" class="objective-description">Fostering a sense of community and belonging.</div>
+        <div id="communication" class="objective-description">Enhancing communication skills for effective interaction.</div>
+        <div id="authoring" class="objective-description">Preparing students for future authorship and innovation.</div>
 
         <div class="achievement-section">
             <h1>Our <span class="highlight">Achievements</span></h1>
@@ -135,5 +220,32 @@ Led by the talented Wycliffe and guided by their patron, the dedicated art teach
             <p><a href="#">Terms</a> | <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a></p>
         </footer>
     </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideInterval = 8000; // 8 seconds
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].classList.add('inactive');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.remove('inactive');
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, slideInterval);
+
+        function toggleDescription(id) {
+            const description = document.getElementById(id);
+            if (description.style.display === "block") {
+                description.style.display = "none";
+            } else {
+                const allDescriptions = document.querySelectorAll('.objective-description');
+                allDescriptions.forEach(desc => desc.style.display = "none"); // Hide all
+                description.style.display = "block"; // Show the clicked one
+            }
+        }
+    </script>
 </body>
 </html>
