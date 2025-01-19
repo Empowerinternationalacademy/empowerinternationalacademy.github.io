@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIA School Calendar 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2196F3;
+        }
+        h1 {
+            text-align: center;
+        }
+        .month {
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            page-break-after: always; /* Add page break after each month */
+        }
+        .month-name {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Arial Black', sans-serif;
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin: 20px 0;
+        }
+        .day {
+            padding: 5px;
+            text-align: center;
+            min-height: 60px;
+            position: relative;
+            border-width: 2px;
+            border-style: solid;
+            box-sizing: border-box;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .event-input {
+            width: 90%;
+            margin: 5px auto;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        .event-note {
+            font-size: 12px;
+            color: #000;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .day-header {
+            font-weight: bold;
+            text-align: center;
+        }
+        .event-container {
+            display: none;
+            margin-top: 5px;
+        }
+        .print-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .print-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="img/log.png" alt="School Logo" class="logo">
+    </div>
+    
+    <h1>EIA School Calendar 2025</h1>
+    <button class="print-btn" id="print-button">Download PDF</button>
+
+    <div id="calendar-content"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function createMonth(name, days, startDay, events = {}) {
+            let monthDiv = document.createElement('div');
+            monthDiv.className = 'month';
+
+            let monthNameDiv = document.createElement('div');
+            monthNameDiv.className = 'month-name';
+            monthNameDiv.innerText = name;
+            monthDiv.appendChild(monthNameDiv);
+
+            let calendarDiv = document.createElement('div');
+            calendarDiv.className = 'calendar';
+            monthDiv.appendChild(calendarDiv);
+
+            ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach((day) => {
+                let dayHeader = document.createElement('div');
+                dayHeader.className = 'day-header';
+                dayHeader.innerText = day;
+                calendarDiv.appendChild(dayHeader);
+            });
+
+            for (let i = 0; i < startDay; i++) {
+                calendarDiv.appendChild(document.createElement('div'));
+            }
+
+            for (let day = 1; day <= days; day++) {
+                let dayDiv = document.createElement('div');
+                dayDiv.className = 'day';
+                dayDiv.innerText = day;
+
+                const totalDays = day + startDay;
+                dayDiv.style.borderColor = (totalDays % 7 === 0 || totalDays % 7 === 1) ? 'red' : 'blue';
+
+                let eventContainer = document.createElement('div');
+                eventContainer.className = 'event-container';
+                
+                for (let i = 0; i < 6; i++) {
+                    let input = document.createElement('input');
+                    input.type = 'text';
+                    input.className = 'event-input';
+                    input.placeholder = `Event ${i + 1}`;
+                    eventContainer.appendChild(input);
+                }
+
+                dayDiv.appendChild(eventContainer);
+
+                let notesDiv = document.createElement('div');
+                dayDiv.appendChild(notesDiv);
+
+                if (events[day]) {
+                    let noteDiv = document.createElement('div');
+                    noteDiv.className = 'event-note highlight';
+                    noteDiv.innerText = events[day]; 
+                    notesDiv.appendChild(noteDiv);
+                    dayDiv.classList.add('highlight'); 
+                }
+
+                dayDiv.addEventListener('click', function() {
+                    eventContainer.style.display = eventContainer.style.display === 'none' || eventContainer.style.display === '' ? 'block' : 'none';
+                });
+
+                eventContainer.addEventListener('blur', function() {
+                    for (let input of eventContainer.children) {
+                        if (input.value.trim() !== '') {
+                            let noteDiv = document.createElement('div');
+                            noteDiv.className = 'event-note highlight';
+                            noteDiv.innerText = input.value; 
+                            notesDiv.appendChild(noteDiv);
+                            dayDiv.classList.add('highlight'); 
+                            input.value = ''; 
+                        }
+                    }
+                });
+
+                calendarDiv.appendChild(dayDiv);
+            }
+
+            document.getElementById('calendar-content').appendChild(monthDiv);
+        }
+
+        const months = [
+            ['January', 31, 3, { 1: 'New Year', 26: 'NRM', 28:'Eid-al-Fitr (End of Ramadan)', 30: 'Patrick\'s Birthday' }],
+            ['February', 28, 6, { 1: 'Reporting Back to School' }],
+            ['March', 31, 6, {8:'Women\'s Day'}],
+            ['April', 30, 2, { 1: 'April Fools\' Day', 18:'Good Friday'}],
+            ['May', 31, 4, { 2: 'Breaking Off', 24: 'Reporting Back to School' }],
+            ['June', 30, 0, {}],
+            ['July', 31, 2, {}],
+            ['August', 31, 5, { 22: 'Breaking off For Term II' }],
+            ['September', 30, 1, { 13: 'Reporting Back to School' }],
+            ['October', 31, 3, { 9: 'Independence Day' }],
+            ['November', 30, 6, { 10: 'Coaching' }],
+            ['December', 31, 1, { 5: 'Breaking off' }]
+        ];
+
+        months.forEach(month => createMonth(month[0], month[1], month[2], month[3] || {}));
+
+        document.getElementById('print-button').addEventListener('click', function() {
+            const element = document.getElementById('calendar-content');
+            html2pdf()
+                .from(element)
+                .set({ 
+                    margin: 1,
+                    filename: 'school_calendar_2025.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                })
+                .save()
+                .then(() => {
+                    console.log('PDF generated successfully!');
+                })
+                .catch(err => {
+                    console.error('Error generating PDF:', err);
+                });
+        });
+    </script>
+
+</body>
+</html>
