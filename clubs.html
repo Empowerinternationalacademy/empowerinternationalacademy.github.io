@@ -12,6 +12,69 @@
             padding: 10px; /* Add some padding */
             border-radius: 5px; /* Optional: round the corners */
         }
+
+        /* Hamburger menu styles */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: black;
+            margin: 3px 0;
+        }
+
+        .close-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .close-menu {
+                display: block;
+                text-align: right;
+            }
+        }
     </style>
 </head>
 <body>
@@ -21,13 +84,20 @@
                 <img src="img/log.png" alt="">
             </div>
             <nav class="nav">
-                <a href="#home">Home</a>
-                <a href="#ict">ICT Club</a>
-                <a href="#news">News Club</a>
-                <a href="#art">Art Club</a>
-                <a href="#mdd">MDD Club</a>
+                <div class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <span class="close-menu" id="close-menu">&times;</span>
+                    <a href="#home">Home</a>
+                    <a href="#ict">ICT Club</a>
+                    <a href="#news">News Club</a>
+                    <a href="#art">Art Club</a>
+                    <a href="#mdd">MDD Club</a>
+                </div>
             </nav>
-            
         </div>
     </header>
 
@@ -47,7 +117,7 @@
                     <p>Giving words to the flow aren't easy</p>
                 </div>
                 <div class="product-item">
-                    <img src="img/debate.JPG" alt="">
+                    <img src="img/debate.jpg" alt="">
                     <h3>The debate club</h3>
                     <p>We are in great number just full of lawyers, doctors never leave the floor unshaken</p>
                 </div>
@@ -183,5 +253,20 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // JavaScript for toggling the hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const closeMenu = document.getElementById('close-menu');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
