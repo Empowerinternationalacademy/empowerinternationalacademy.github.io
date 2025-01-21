@@ -128,8 +128,9 @@
             background-color: white; /* White background */
             color: #0033A0; /* Darker blue */
             border-radius: 50%;
-            width: 300px;
-            height: 300px; /* Circular size */
+            width: 80%; /* Responsive width */
+            height: auto; /* Auto height */
+            max-width: 300px; /* Max width for larger screens */
             margin: 40px auto; /* Centered with margin */
             display: flex;
             align-items: center;
@@ -160,15 +161,15 @@
             margin: 40px auto;
         }
         .objective {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #90EE90; /* Light green */
+            display: block; /* Vertical alignment */
+            padding: 15px; /* Increased padding */
+            background-color: #4CAF50; /* Green from the logo */
             color: white;
-            border-radius: 50px; /* Oval shape */
+            border-radius: 10px; /* Rounded corners */
             cursor: pointer;
-            margin: 5px;
+            margin: 10px 0; /* Margin for spacing */
             transition: background 0.3s;
-            font-size: 1.1rem; /* Increase font size */
+            font-size: 1.5rem; /* Increased font size */
         }
         .objective:hover {
             background-color: #66CC66; /* Darker green on hover */
@@ -196,8 +197,9 @@
         @media (max-width: 600px) {
             .header-title { font-size: 1.2rem; }
             .content h3 { font-size: 1.5rem; }
-            .core-values { width: 80%; height: auto; }
+            .core-values { width: 90%; height: auto; }
             .vision, .mission { font-size: 1.2rem; } /* Adjust font size for mobile */
+            .objective { font-size: 1.2rem; } /* Adjust objective font size for mobile */
         }
     </style>
 </head>
@@ -270,9 +272,9 @@
 </div>
 
 <div class="content">
-    <!--h3>Empower International Academy is a Christian mixed international boarding school located in Nswanjere, Mpigi district.</h3-->
-    <!--p></p-->
-</div>
+    <!--h3>Empower International Academy is a Christian mixed international boarding school located in Nswanjere, Mpigi district.</h3>
+    <p></p>
+</div-->
 
 <div class="paragraph-container">
     <div class="paragraph vision">
