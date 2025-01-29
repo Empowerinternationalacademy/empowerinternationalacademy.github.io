@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Activities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .activity {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .countdown {
+            font-size: 1.5em;
+            color: #d9534f;
+            margin: 15px 0;
+        }
+        .comment-input {
+            width: calc(100% - 110px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-button {
+            padding: 10px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #5bc0de;
+            color: white;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #31b0d5;
+        }
+        .comments {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .comment {
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .comment:last-child {
+            border-bottom: none;
+        }
+        .picture {
+            margin-top: 15px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="activity">
+        <h2>Upcoming Activity: Coding Workshop</h2>
+        <p>Description: Join us for an interactive coding workshop where you will learn the basics of web development.</p>
+        <img src="workshop.jpg" alt="Coding Workshop" class="picture">
+        <div class="countdown" id="countdown"></div>
+        <div>
+            <input type="text" class="comment-input" id="commentInput" placeholder="Leave a comment...">
+            <button class="submit-button" onclick="submitComment()">Submit</button>
+        </div>
+        <div class="comments" id="comments"></div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Jan 30, 2025 15:00:00").getTime();
+
+        // Update the countdown every second
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Event Started!";
+            }
+        }, 1000);
+
+        // Function to submit comment
+        function submitComment() {
+            const commentInput = document.getElementById("commentInput");
+            const commentText = commentInput.value.trim();
+
+            if (commentText) {
+                const commentsDiv = document.getElementById("comments");
+                const newComment = document.createElement("div");
+                newComment.className = "comment";
+                newComment.textContent = commentText;
+                commentsDiv.appendChild(newComment);
+                commentInput.value = ""; // Clear input after submission
+            }
+        }
+    </script>
+
+</body>
+</html>
